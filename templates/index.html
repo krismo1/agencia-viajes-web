@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Venta de Pasajes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Venta de Pasajes de Avión ✈️</h1>
+        
+        <form method="POST">
+            <label>Origen:</label>
+            <input type="text" name="origen" required>
+            
+            <label>Destino:</label>
+            <input type="text" name="destino" required>
+            
+            <label>Fecha:</label>
+            <input type="date" name="fecha" required>
+            
+            <button type="submit">Reservar</button>
+        </form>
+        
+        {% if mensaje %}
+            <p class="mensaje">{{ mensaje }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
